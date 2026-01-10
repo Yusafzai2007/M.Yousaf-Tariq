@@ -1,0 +1,62 @@
+<div class=" flex items-center justify-center min-h-screen">
+    
+  <form class="bg-gray-800 text-white p-8 rounded-lg shadow-lg w-full max-w-md space-y-6"
+  [formGroup]="studentformdata"
+  >
+    <h2 class="text-2xl font-bold text-center">Reactive form</h2>
+
+    <!-- Name Field -->
+    <div>
+      <label for="name" class="block mb-1">Name</label>
+      <input type="text"
+      formControlName="firstName"
+      id="name" placeholder="Your Name" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
+      @if (studentformdata.controls['firstName'].touched && studentformdata.controls['firstName'].errors?.['required']) {
+        <span>This is required</span>
+      }@else if (studentformdata.controls['firstName'].errors?.['minlength']) {
+                <span>4 character</span>
+      }
+     
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="email" class="block mb-1">Email</label>
+      <input type="email" id="email"
+            formControlName="email"
+      placeholder="you@example.com" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
+      <div>
+        @if(studentformdata.controls['email'].touched && studentformdata.controls['email'].errors?.['required']){
+        <span>This is required</span>
+
+        }
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div>
+      <label for="password" class="block mb-1">Password</label>
+      <input type="password"
+            formControlName="password"
+      id="password" placeholder="********" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500">
+    </div>
+
+    <!-- Submit Button -->
+   <button
+  type="submit"
+  [disabled]="studentformdata.invalid"
+  [ngClass]="{
+    'bg-pink-700 hover:bg-pink-600 cursor-pointer': studentformdata.valid,
+    'bg-gray-600 cursor-not-allowed opacity-60': studentformdata.invalid
+  }"
+  class="w-full p-2 rounded font-semibold transition-colors"
+>
+      Sign Up
+    </button>
+   
+  </form>
+</div>
+
+
+
+{{fromdata|json}}

@@ -1,0 +1,76 @@
+<div class="bg-gray-900 flex items-center justify-center min-h-screen">
+    
+  <form
+    class="bg-gray-800 text-white p-8 rounded-lg shadow-lg w-[50vw] max-w-md space-y-6"
+    (ngSubmit)="submitForm()"
+    #formRef="ngForm"
+  >
+    <h2 class="text-2xl font-bold text-center">  Template Form</h2>
+    <!-- Name Field -->
+    <div>
+      <label for="name" class="block mb-1">Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="studentform.firstName"
+        #firstName="ngModel"
+        required
+        minlength="3"
+        placeholder="Your Name"
+        class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+      />
+      <div *ngIf="firstName.touched && firstName.errors">
+        <span class="text-red-800" *ngIf="firstName.errors['required']">This is required</span>
+        <span class="text-red-800" *ngIf="firstName.errors['minlength']">Minimum 3 characters</span>
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="email" class="block mb-1">Email</label>
+      <input
+        type="email"
+        id="email"
+        #email="ngModel"
+        name="email"
+        required
+        [(ngModel)]="studentform.email"
+        placeholder="you@example.com"
+        class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+      />
+      <div>
+        <div *ngIf="email.touched && email.errors">
+          <span class="text-red-800" *ngIf="email.errors['required']">This is required</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div>
+      <label for="password" class="block mb-1">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="studentform.password"
+        #password="ngModel"
+        required
+        minlength="3"
+        placeholder="********"
+        class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+      />
+      <div *ngIf="password.touched && password.errors">
+        <span class="text-red-800" *ngIf="password.errors['required']">This is required</span>
+        <span class="text-red-800" *ngIf="password.errors['minlength']">Must be 3 character</span>
+      </div>
+    </div>
+    <!-- Submit Button -->
+    <button
+      type="submitForm"
+      class="w-full bg-pink-700 hover:bg-pink-600 p-2 rounded font-semibold transition-colors"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>

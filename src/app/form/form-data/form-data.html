@@ -1,0 +1,17 @@
+<div class="relative w-full h-full overflow-hidden bg-[#020b06]">
+  <canvas
+    #canvasRef
+    class="block w-full h-full"
+    [style.opacity]="opacity">
+  </canvas>
+
+  @if (outerVignette) {
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none
+    bg-[radial-gradient(circle,_rgba(0,0,0,0)_50%,_rgba(0,0,0,0.95)_100%)]"></div>
+  }
+
+  @if (centerVignette) {
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none
+    bg-[radial-gradient(circle,_rgba(0,0,0,0.6)_0%,_rgba(0,0,0,0)_55%)]"></div>
+  }
+</div>

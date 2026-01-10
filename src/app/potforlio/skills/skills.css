@@ -1,0 +1,107 @@
+/* Custom ease for a nice 'pop' effect */
+.ease-spring {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Spring animation keyframes */
+@keyframes springIn {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 0.8;
+  }
+  80% {
+    transform: scale(0.95) rotate(-5deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.spring-animation {
+  animation: springIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  #hover-card,
+  #mobile-card {
+    width: 90vw;
+    max-width: 320px;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scale(0.9) !important;
+  }
+
+  #hover-card.opacity-100,
+  #mobile-card.opacity-100 {
+    transform: translate(-50%, -50%) scale(1) !important;
+  }
+
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin: 2px;
+  }
+
+  .tech-node div {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 10px !important;
+  }
+
+  .tech-node div.w-24,
+  .tech-node div.w-28 {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+/* Additional styles for Angular component */
+.tech-circle {
+  box-shadow: var(--shadow-color, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+}
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}

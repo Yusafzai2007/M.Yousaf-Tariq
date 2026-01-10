@@ -1,0 +1,34 @@
+/* Typewriter styling forced */
+.name-typewriter span,
+.name-typewriter span span {
+  font-size: 3.75rem !important; /* text-6xl */
+  font-weight: 900 !important;
+  color: #34d399 !important; /* emerald-400 */
+  letter-spacing: -0.02em !important;
+  text-shadow: 0 0 30px rgba(52, 211, 153, 0.3) !important;
+  font-family: inherit !important;
+  position: relative !important;
+}
+
+/* Desktop font size */
+@media (min-width: 768px) {
+  .name-typewriter span,
+  .name-typewriter span span {
+    font-size: 6rem !important; /* md:text-8xl */
+  }
+}
+
+/* Fake blinking cursor */
+.name-typewriter span::after,
+.name-typewriter span span::after {
+  content: '|';
+  position: absolute;
+  right: -10px;
+  color: #34d399 !important;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
