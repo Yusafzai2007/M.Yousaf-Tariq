@@ -1,4 +1,4 @@
-<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50">
+<nav  class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50">
 
   <!-- Main Navbar -->
   <div
@@ -18,19 +18,35 @@
           <path d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       </div>
-      <span class="text-white font-bold tracking-[0.2em] text-xl">UJ</span>
+      <span class="text-white font-bold tracking-[0.2em] text-xl">MY</span>
     </div>
 
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center gap-1">
-      <a class="px-5 py-2 text-sm font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-xl">
+      <a (click)="scrollToSection('home')" 
+         [class]="getNavClass('home')">
         Home
       </a>
-      <a class="px-4 py-2 text-sm text-gray-400 hover:text-emerald-300">Projects</a>
-      <a class="px-4 py-2 text-sm text-gray-400 hover:text-emerald-300">Skills</a>
-      <a class="px-4 py-2 text-sm text-gray-400 hover:text-emerald-300">Journey</a>
-      <a class="px-4 py-2 text-sm text-gray-400 hover:text-emerald-300">Certificates</a>
-      <a class="px-4 py-2 text-sm text-gray-400 hover:text-emerald-300">Contact</a>
+      <a (click)="scrollToSection('projects')" 
+         [class]="getNavClass('projects')">
+        Projects
+      </a>
+      <a (click)="scrollToSection('skills')" 
+         [class]="getNavClass('skills')">
+        Skills
+      </a>
+      <a (click)="scrollToSection('journey')" 
+         [class]="getNavClass('journey')">
+        Journey
+      </a>
+      <a (click)="scrollToSection('Experience')" 
+         [class]="getNavClass('Experience')">
+        Experience
+      </a>
+      <a (click)="scrollToSection('contact')" 
+         [class]="getNavClass('contact')">
+        Contact
+      </a>
     </div>
 
     <!-- Mobile Toggle Button -->
@@ -78,12 +94,18 @@
     class="mt-3 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl md:hidden"
   >
     <div class="flex flex-col divide-y divide-white/10">
-      <a (click)="closeMenu()" class="px-6 py-3 text-emerald-400">Home</a>
-      <a (click)="closeMenu()" class="px-6 py-3 text-gray-300 hover:text-emerald-300">Projects</a>
-      <a (click)="closeMenu()" class="px-6 py-3 text-gray-300 hover:text-emerald-300">Skills</a>
-      <a (click)="closeMenu()" class="px-6 py-3 text-gray-300 hover:text-emerald-300">Journey</a>
-      <a (click)="closeMenu()" class="px-6 py-3 text-gray-300 hover:text-emerald-300">Certificates</a>
-      <a (click)="closeMenu()" class="px-6 py-3 text-gray-300 hover:text-emerald-300">Contact</a>
+      <a (click)="scrollToSection('home'); closeMenu()" 
+         [class]="getMobileNavClass('home')">Home</a>
+      <a (click)="scrollToSection('projects'); closeMenu()" 
+         [class]="getMobileNavClass('projects')">Projects</a>
+      <a (click)="scrollToSection('skills'); closeMenu()" 
+         [class]="getMobileNavClass('skills')">Skills</a>
+      <a (click)="scrollToSection('journey'); closeMenu()" 
+         [class]="getMobileNavClass('journey')">Journey</a>
+      <a (click)="scrollToSection('Experience'); closeMenu()" 
+         [class]="getMobileNavClass('Experience')">Experience</a>
+      <a (click)="scrollToSection('contact'); closeMenu()" 
+         [class]="getMobileNavClass('contact')">Contact</a>
     </div>
   </div>
 
