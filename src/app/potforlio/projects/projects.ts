@@ -154,6 +154,23 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       ],
       imageCount: 8,
     },
+    {
+      id: 6,
+      title: 'Travel Drones Potforlio',
+      description:
+"A travel drone portfolio website showcasing stunning aerial photography and videography from different destinations, designed to highlight landscapes, cityscapes, and adventures. Built with a modern frontend, focusing on visual storytelling, smooth navigation, and an immersive user experience.",
+      liveDemo: 'https://sky-view-travel-drones.vercel.app/#home',
+      github: 'https://github.com/Yusafzai2007',
+      tags: ['JavaScript', 'Tailwind', 'CSS', 'HTML'],
+      images: [
+        '/assets/1.png',
+        '/assets/2.png',
+        '/assets/3.png',
+        '/assets/4.png',
+        '/assets/5.png',
+      ],
+      imageCount: 5,
+    },
   
   ];
 
